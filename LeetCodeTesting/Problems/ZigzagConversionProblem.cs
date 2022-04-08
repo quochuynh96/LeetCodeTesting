@@ -5,39 +5,52 @@
         public static string Convert(string s, int numRows)
         {
             int[] arr = Enumerable.Range(0, s.Length).ToArray();
-            bool isDown = true;
-
-            int temp;
-            for (int i = 0; i <= arr.Length - 2; i++)
+            int x = 0;
+            int y = 0;
+            int index = 0;
+            char[,] zigzagMaxtrix = new char[s.Length, numRows + 1];
+            if (numRows < 2) return s;
+            while (index < s.Length)
             {
-                if (isDown)
+                if (x % (numRows - 1) == 0)
                 {
-                    if (arr[i] > arr[i + 1])
-                    {
-                        temp = arr[i];
-                        arr[i] = arr[i + 1];
-                        arr[i + 1] = temp;
-                    }
+                    zigzagMaxtrix[x, y] = s[index];
+                    index++;
                 }
-
                 else
                 {
-                    if (arr[i] < arr[i + 1])
+                    if ((x + y) % (numRows - 1) == 0)
                     {
-                        temp = arr[i];
-                        arr[i] = arr[i + 1];
-                        arr[i + 1] = temp;
+                        zigzagMaxtrix[x, y] = s[index];
+                        index++;
                     }
                 }
 
-                isDown = !isDown;
+                y++;
+                if (y == numRows)
+                {
+                    x++;
+                    y = 0;
+                }
             }
 
-            for (int i = 0; i < arr.Length; i++)
+
+            char[] result = new char[s.Length];
+            int k = 0;
+            for (int j = 0; j <= numRows; j++)
             {
-                Console.WriteLine(arr[i]);
+                for (int i = 0; i <= x; i++)
+                {
+                    // Console.WriteLine("[" + i + "," + j + "]= " + zigzagMaxtrix[i, j]);
+                    if (zigzagMaxtrix[i, j] != char.MinValue)
+                    {
+                        result[k] = zigzagMaxtrix[i, j];
+                        k++;
+                    }
+                }
             }
-            return s;
+
+            return new string(result);
         }
     }
 }
