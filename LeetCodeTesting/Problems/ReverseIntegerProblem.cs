@@ -1,6 +1,6 @@
 ﻿namespace LeetCodeTesting.Problems
 {
-    public static class ReverseInteger
+    public static class ReverseIntegerProblem
     {
         public static int Reverse(int x)
         {

@@ -7,7 +7,7 @@ namespace LeetCodeTestingUnitTest
 {
 
     [TestFixture]
-    public class FindMedianSortedArraysTest
+    public class FindMedianSortedArraysProblemTest
     {
         public partial class InputData
         {

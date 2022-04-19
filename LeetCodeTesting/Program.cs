@@ -1,3 +1,3 @@
 ﻿using LeetCodeTesting.Problems;
 
-Console.WriteLine(ReverseInteger.Reverse(120));
+Console.WriteLine(StringToIntegerProblem.MyAtoi(" ++1"));

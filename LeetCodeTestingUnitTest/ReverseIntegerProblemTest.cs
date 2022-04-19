@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 namespace LeetCodeTestingUnitTest
 {
     [TestFixture]
-    public class ReverseIntegerTest
+    public class ReverseIntegerProblemTest
     {
 
         [TestCase(123, 321)]
@@ -18,7 +18,7 @@ namespace LeetCodeTestingUnitTest
         [TestCase(1563847412, 0)]
         public async Task ReverseIntegerProblemTesting(int input, int result)
         {
-            Assert.AreEqual(result, ReverseInteger.Reverse(input));
+            Assert.AreEqual(result, ReverseIntegerProblem.Reverse(input));
         }
     }
 }
