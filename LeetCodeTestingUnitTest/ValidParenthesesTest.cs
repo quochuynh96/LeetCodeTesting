@@ -5,14 +5,15 @@ using System.Threading.Tasks;
 namespace LeetCodeTestingUnitTest
 {
     [TestFixture]
-    public class ZigzagConversionProblemTest
+    public class ValidParenthesesTest
     {
-        [TestCase("PAYPALISHIRING", 3, "PAHNAPLSIIGYIR")]
-        [TestCase("PAYPALISHIRING", 4, "PINALSIGYAHRPI")]
-        [TestCase("A", 1, "A")]
-        public async Task ZigzagConversionProblemTesting(string input, int numRows, string output)
+        [TestCase("()", true)]
+        [TestCase("()[]{}", true)]
+        [TestCase("(]", false)]
+        [TestCase("{[]}", true)]
+        public async Task ValidPauerenthesesTesting(string input, bool output)
         {
-            Assert.AreEqual(ZigzagConversionProblem.Convert(input, numRows), output);
+            Assert.AreEqual(ValidParentheses.Validate(input), output);
         }
     }
 }
